@@ -1,1 +1,17 @@
-<p>header works!</p>
+<nav class="nav-bar">
+    <div class="nav-bar__left">
+        <img class="nav-bar__left__image">
+        <span class="nav-bar__left__name">Museum of <span class="bar__left__name__art">Art</span> </span> 
+    </div>
+
+    <div class="nav-bar__right">
+        <a class="nav-bar__right__home" (isHomeRoute)="checkIsHomeRoute($event)" routerLink="/home">
+            <img class="nav-bar__right__home__image" alt="home">
+            <span class="nav-bar__right__home__name">Home</span>
+        </a>
+        <a class="nav-bar__right__your-favorites" routerLink="/favorites">
+            <img class="nav-bar__right__favorites__image" alt="favorite">
+            <span class="nav-bar__right__favorites__name">Your favorites</span>
+        </a>
+    </div>
+</nav>
