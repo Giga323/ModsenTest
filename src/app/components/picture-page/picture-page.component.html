@@ -1,0 +1,10 @@
+<div class="picture-page" routerLink='/home/detail-info' [queryParams]="{ pictureId: picture.id }">
+    <img class="picture-page__image" [src]="imageSrc" alt="picture">
+    <div class="picture-page__description">
+        <span class="picture-page__description__title"> {{ picture.title }}</span>
+        <span class="picture-page__description__author-title"> {{ picture.artist_title }}</span>
+        <span class="picture-page__description__public" *ngIf="picture.is_public_domain"> Public </span>
+        <span class="picture-page__description__public" *ngIf="!picture.is_public_domain"> Private </span>
+    </div>
+    <app-add-favorite [pictureInfo]="picture" (click)="$event.stopPropagation()"></app-add-favorite>
+</div>

@@ -5,11 +5,11 @@
     </div>
 
     <div class="nav-bar__right">
-        <a class="nav-bar__right__home" (isHomeRoute)="checkIsHomeRoute($event)" routerLink="/home">
+        <a class="nav-bar__right__home" routerLink="/home" *ngIf="isHomeComponent">
             <img class="nav-bar__right__home__image" alt="home">
             <span class="nav-bar__right__home__name">Home</span>
         </a>
-        <a class="nav-bar__right__your-favorites" routerLink="/favorites">
+        <a class="nav-bar__right__your-favorites" routerLink="/home/favorites">
             <img class="nav-bar__right__favorites__image" alt="favorite">
             <span class="nav-bar__right__favorites__name">Your favorites</span>
         </a>

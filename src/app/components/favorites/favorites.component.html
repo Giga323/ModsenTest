@@ -1,1 +1,15 @@
-<p>favorites works!</p>
+<main class="favorites">
+    <h1 class="favorites__header-first">Here Are Your</h1>
+    <div class="favorites__header-favorites">
+        <img class="favorites__header-favorites__favorite" src="../../../assets/" alt="favorites">
+    </div>
+
+    <span class="favorites__saved">Saved by you</span>
+    <span class="favorites__list">Your favorites list</span>
+
+    <div class="favorites__pictures" *ngIf="favoritePictures">
+        <ng-container *ngFor="let picture of favoritePictures">
+            <app-picture [picture]="picture"></app-picture>
+        </ng-container>
+    </div>
+</main>

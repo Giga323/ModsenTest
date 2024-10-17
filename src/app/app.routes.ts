@@ -8,13 +8,13 @@ export const routes: Routes = [
         )
     },
     {
-        path: 'detail-info',
+        path: 'home/detail-info',
         loadComponent: () => import('./components/detail-info/detail-info.component').then(
             m => m.DetailInfoComponent
         )
     },
     {
-        path: 'favorites',
+        path: 'home/favorites',
         loadComponent: () => import('./components/favorites/favorites.component').then(
             m => m.FavoritesComponent
         )

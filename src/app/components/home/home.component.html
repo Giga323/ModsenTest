@@ -1,1 +1,31 @@
-<p>home works!</p>
+<main class="home">
+    <h1 class="home__header">Let's find some 
+        <span class="home__header__art">Art</span>
+         Here!
+    </h1>
+
+    <app-search></app-search>
+
+    <div class="home__gallery">
+        <span class="home__gallery__topics">Topics for you</span>
+        <span class="home__galley__special-gallery">Our special gallery</span>
+
+        <div class="home__gallery__pictures">
+
+            <div class="home__gallery__loading" *ngIf="isGalleryLoading">Loading...</div>
+
+            <ng-container *ngFor="let picture of currentPagePictures" | async>
+                <app-picture-page [picture]="picture"></app-picture-page>
+            </ng-container>
+        </div>
+
+        <app-pages-switcher (pageNumberEvent)="getPage($event)"></app-pages-switcher>
+    </div>
+
+    <div class="home__another-works">
+        <span class="home__another-works__header-other">Here some more</span>
+        <span class="home__another-works__other-works">Other works for you</span>
+        <app-other-works></app-other-works>
+    </div>
+    
+</main>
