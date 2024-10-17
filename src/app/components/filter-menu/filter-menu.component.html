@@ -1,5 +1,7 @@
 <div class="filter-menu">
-    <span class="filter-menu__name" (click)="toggleMenu()">Filter</span>
+    <div class="filter-menu__button" (click)="toggleMenu()">
+        <img class="filter-menu__button__filter" src="../../../assets/filter.png" alt="filter">
+    </div>
 
     <div class="filter-menu__options" *ngIf="isMenuOpen">
         <ng-container *ngFor="let option of options">

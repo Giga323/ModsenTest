@@ -1,0 +1,36 @@
+.picture {
+    cursor: pointer;
+    height: 100px;
+    width: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+    &__image {
+        margin-left: 1em;
+        height: 70px;
+        width: 70px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+
+        &__author-title {
+            color: #e2ac5a;
+            font-size: 0.75rem;
+        }
+
+        &__public {
+            font-weight: bold;
+        }
+    }
+
+    .favorite {
+        margin-right: 1em;
+    }
+}

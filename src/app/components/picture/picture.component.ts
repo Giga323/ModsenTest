@@ -21,5 +21,8 @@ export class PictureComponent implements OnInit{
 
   ngOnInit(): void {
     this.imageSrc = this.imageService.getImage(this.picture.image_id, {width: 60, height: 60})
+    if (this.picture.title.length > 25) {
+      this.picture.title = this.picture.title.slice(0, 25) + '...'
+    }
   }
 }

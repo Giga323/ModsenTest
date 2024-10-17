@@ -1,0 +1,43 @@
+.content-wrapper {
+    background-color: white;
+    height: 90px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .footer-bar {
+        margin: 0 15em;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: row;
+
+        gap: 0.5em;
+
+
+        &__image {
+            height: 40px;
+            width: 40px;
+        }
+
+        &__name {
+            margin-top: auto;
+
+            color: black;
+            font-size: 1rem;
+
+            &__art{
+                color: #d49c47;
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.favorites {
+    margin: 0 15em;
+
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header-first {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    &__header-favorites {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+
+        &__image {
+            width: 30px;
+            height: 40px;
+        }
+
+        &__name {
+            color: #f17900;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+    }
+
+    &__saved {
+        margin-top: 3em;
+        color: #e2ac5a;
+    }
+
+    &__list {
+        font-size: 1.5rem;
+    }
+
+    &__pictures {
+        margin-top: 1.5em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+    }
+}

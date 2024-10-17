@@ -1,5 +1,6 @@
 .detail-info {
     margin: 5em 15em;
+    height: calc(100% - 110px);
 
     &__loading {
         display: flex;
