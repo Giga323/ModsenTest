@@ -58,6 +58,7 @@ export class SearchComponent {
 
       this.apiService.searchByPictureName(this.inputValue).subscribe((response) => {
         if (response.data.length > 0 && response.data) {
+          this.searchError = ''
           if (this.searchFilterOption === 'by alphabet') {
             this.inputResult = this.filterService.filterByAlphabet(response.data)
           } else if (this.searchFilterOption === 'by date') { 

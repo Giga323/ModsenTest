@@ -1,0 +1,29 @@
+.pages-switcher {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+
+    &__left {
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;   
+        border-bottom: 8px solid transparent;
+        border-right: 10px solid #f17900;
+    }
+
+    &__page-number {
+        width: 1em;
+        height: 1em;
+    }
+
+    &__right {
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;   
+        border-bottom: 8px solid transparent;
+        border-left: 10px solid #f17900;
+    }
+}

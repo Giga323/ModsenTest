@@ -1,7 +1,7 @@
 <div class="pages-switcher">
-    <div class="pages-switcher__left" *ngIf="pagesNumber[0] > 1" (click)="switchPagesLeft()">previous</div>
+    <div class="pages-switcher__left" *ngIf="pagesNumber[0] > 1" (click)="switchPagesLeft()"></div>
     <ng-container *ngFor="let pageNumber of pagesNumber">
-        <div class="pages-switcher__pageNumber" (click)="switchPage(pageNumber)"> {{ pageNumber }}</div>
+        <div class="pages-switcher__page-number" (click)="switchPage(pageNumber)"> {{ pageNumber }}</div>
     </ng-container>
-    <div class="pages-switcher__right" (click)="switchPagesRight()">next</div>
+    <div class="pages-switcher__right" (click)="switchPagesRight()"></div>
 </div>

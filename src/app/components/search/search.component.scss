@@ -1,0 +1,42 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    width: 40em;
+    background-color: #f0f0f0;
+    border-radius: 1em;
+    margin-bottom: 10em;
+
+    &__string {
+        height: 3em;
+        display: flex;
+        flex-direction: row;
+        border-radius: 1em;
+        align-items: center;
+
+        &__input {
+            width: 100%;
+            margin-left: 1em;
+            margin-right: auto;
+            border: none;
+            background-color: #f0f0f0;
+            outline: none;
+            
+        }
+
+        .filter {
+            margin-right: 1em;
+        }
+
+        &__image {
+            width: 2em;
+            height: 2em;
+        }
+    }
+
+    &__result {
+
+        &__item {
+            margin-left: 1em;
+        }
+    }
+}

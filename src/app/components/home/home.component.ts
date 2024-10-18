@@ -44,9 +44,14 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   getPage(pageNumber: number): void {
     this.isGalleryLoading = true
+    this.currentPagePictures = []
     this.apiService.getPage(pageNumber).subscribe((response) => {
       this.isGalleryLoading = false
       this.currentPagePictures = response.data
+      this.currentPagePictures = this.currentPagePictures.map((el: any) => {
+        el['title'] = (el['title'].length > 20) ? el['title'].slice(0, 20) + '...' : el['title']
+        return el
+      })
     })
   }
 }

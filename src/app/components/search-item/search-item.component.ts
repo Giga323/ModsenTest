@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ImageService } from '../../services/image/image.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search-item',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './search-item.component.html',
   styleUrl: './search-item.component.scss'
 })

@@ -8,18 +8,20 @@
 
     <div class="home__gallery">
         <span class="home__gallery__topics">Topics for you</span>
-        <span class="home__galley__special-gallery">Our special gallery</span>
+        <span class="home__gallery__special-gallery">Our special gallery</span>
 
         <div class="home__gallery__pictures">
 
-            <div class="home__gallery__loading" *ngIf="isGalleryLoading">Loading...</div>
+            <div class="home__gallery__pictures__loading" *ngIf="isGalleryLoading">
+                <div class="home__gallery__pictures__loading__loader"></div>
+            </div>
 
-            <ng-container *ngFor="let picture of currentPagePictures" | async>
+            <ng-container *ngFor="let picture of currentPagePictures">
                 <app-picture-page [picture]="picture"></app-picture-page>
             </ng-container>
         </div>
 
-        <app-pages-switcher (pageNumberEvent)="getPage($event)"></app-pages-switcher>
+        <app-pages-switcher class="pages-switcher" (pageNumberEvent)="getPage($event)"></app-pages-switcher>
     </div>
 
     <div class="home__another-works">

@@ -5,7 +5,7 @@
 
     <div class="filter-menu__options" *ngIf="isMenuOpen">
         <ng-container *ngFor="let option of options">
-            <div class="filter-menu__options_option" (click)="chooseOption(option)"> {{ option }} </div>
+            <div class="filter-menu__options__option" (click)="chooseOption(option)"> {{ option }} </div>
         </ng-container>
     </div>
 </div>

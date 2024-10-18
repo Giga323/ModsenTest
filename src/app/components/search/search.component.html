@@ -1,21 +1,16 @@
 <div class="search">
     <div class="search__string">
         <input
-        class="search__input"
+        class="search__string__input"
         type="text"
         [(ngModel)]="inputValue" 
         (input)="onSearch()"
         placeholder="Search Art, Artist, Work...">
 
-        <img class="search__lupe" alt="lupe">
-        <app-filter-menu (optionEvent)="getFilterOption($event)"></app-filter-menu>
-
-        <div class="search__filter" *ngIf="searchFilterOption"> 
-            <span class="search__filter__name"> {{ searchFilterOption }} </span>
-            <button class="search__filter__remove" (click)="removeFilterOption()"></button>
-        </div>
-
+        <app-filter-menu class="filter" (optionEvent)="getFilterOption($event)"></app-filter-menu>
+        
     </div>
+
     <div class="search__error" *ngIf="searchError"> {{ searchError }} </div>
 
     <div class="search__result" *ngIf="inputResult && inputValue.length > 2">
