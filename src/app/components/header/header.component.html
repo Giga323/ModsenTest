@@ -1,23 +1,23 @@
 <nav class="nav-bar">
     <div class="nav-bar__content-wrapper">
-        <div class="nav-bar__left">
-            <img class="nav-bar__left__image" src="../../../assets/museum.png">
-            <span class="nav-bar__left__name">Museum of <span class="nav-bar__left__name__art">Art</span> </span> 
+        <div class="nav-bar__content-wrapper__left">
+            <img class="nav-bar__content-wrapper__left__image" src="../../../assets/museum.png">
+            <span class="nav-bar__content-wrapper__left__name">Museum of <span class="nav-bar__left__name__art">Art</span> </span> 
         </div>
 
-        <div class="nav-bar__right">
+        <div class="nav-bar__content-wrapper__right">
 
-            <div class="nav-bar__right__home" routerLink="/home" *ngIf="isHomeComponent">
-                <img class="nav-bar__right__home__image" alt="home" src="../../../assets/home.png">
-                <span class="nav-bar__right__home__name">Home</span>
+            <div class="nav-bar__content-wrapper__right__home" routerLink="/home" *ngIf="isHomeComponent">
+                <img class="nav-bar__content-wrapper__right__home__image" alt="home" src="../../../assets/home.png">
+                <span class="nav-bar__content-wrapper__right__home__name">Home</span>
             </div>
 
-            <div class="nav-bar__right__favorites" routerLink="/home/favorites">
-                <img class="nav-bar__right__favorites__image" alt="favorite" src="../../../assets/bookmark-header.png">
-                <span class="nav-bar__right__favorites__name">Your favorites</span>
+            <div class="nav-bar__content-wrapper__right__favorites" routerLink="/home/favorites">
+                <img class="nav-bar__content-wrapper__right__favorites__image" alt="favorite" src="../../../assets/bookmark-header.png">
+                <span class="nav-bar__content-wrapper__right__favorites__name">Your favorites</span>
             </div>
         </div>
 
-        <app-burger-menu class="nav-bar__burger-menu"></app-burger-menu>
+        <app-burger-menu class="nav-bar__content-wrapper__burger-menu"></app-burger-menu>
     </div>
 </nav>

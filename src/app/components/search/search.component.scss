@@ -5,7 +5,6 @@
     background-color: #f0f0f0;
     border-radius: 1em;
     margin-bottom: 10em;
-    position: relative;
 
     &__string {
         height: 3em;
@@ -36,8 +35,7 @@
 
     &__result {
         width: 100%;
-        margin-top: 2.5em;
-        position: absolute;
+        position: relative;
 
         border-bottom-left-radius: 1em;
         border-bottom-right-radius: 1em;
