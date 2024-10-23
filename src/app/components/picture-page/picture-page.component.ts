@@ -20,6 +20,10 @@ export class PicturePageComponent {
   ) { }
 
   ngOnInit(): void {
-    this.imageSrc = this.imageService.getImage(this.picture.image_id, {width: 300, height: 400})
+    this.imageSrc = this.imageService.getImageSrc(this.picture.image_id, {width: 300, height: 400})
+  }
+
+  onImageSrcError() {
+    this.imageSrc = this.imageService.onImageSrcError()
   }
 }

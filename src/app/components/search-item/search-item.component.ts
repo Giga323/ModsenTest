@@ -19,10 +19,14 @@ export class SearchItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getImage()
+    this.getImageSrc()
   }
 
-  getImage() {
-    this.imageSrc = this.imageService.getImage(this.itemInfo.image_id, {width: 40, height: 40})
+  getImageSrc() {
+    this.imageSrc = this.imageService.getImageSrc(this.itemInfo.image_id, {width: 40, height: 40})
+  }
+
+  onImageSrcError() {
+    this.imageSrc = this.imageService.onImageSrcError()
   }
 }

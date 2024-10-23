@@ -5,11 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class ImageService {
 
-  readonly linkPictures: string = 'https://www.artic.edu/iiif/2'
+  readonly linkPictures: string = 'https://www.artic.edu/iiif/2';
+  readonly defaultImageSrc: string = '../../../assets/museum.png'
 
   constructor() { }
 
-  getImage(imageId: number, size: any): string {
+  getImageSrc(imageId: number, size: any): string {
     return `${this.linkPictures}/${imageId}/full/${size.width},${size.height}/0/default.jpg`
+  }
+
+  onImageSrcError() {
+    return this.defaultImageSrc
   }
 }

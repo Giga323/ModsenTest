@@ -4,7 +4,7 @@
     </div>
     <div class="detail-info__picture-info" *ngIf="pictureInfo">
         <div class="detail-info__picture-info__container">
-            <img class="detail-info__picture-info__container__image" [src]="imageSrc" alt="picture">
+            <img class="detail-info__picture-info__container__image" [src]="imageSrc" alt="picture" (error)="onImageSrcError()">
             <app-add-favorite class="detail-info__picture-info__container__favorite" [pictureInfo]="pictureInfo"></app-add-favorite>
         </div>
         <div class="detail-info__picture-info__description">
@@ -18,8 +18,8 @@
                 <span class="detail-info__picture-info__description__overview__dimensions">Dimensions: <span class="black">{{ pictureInfo.dimensions }} </span></span>
                 <span class="detail-info__picture-info__description__overview__credit-line">Credit Line: <span class="black">{{ pictureInfo.credit_line }}</span></span>
                 <span class="detail-info__picture-info__description__overview__repository">Repository: <span class="black">{{ pictureInfo.department_title }}</span></span>
-                <span class="detail-info__picture-info__description__overview__public-info" *ngIf="pictureInfo.is_public_domain">Public</span>
-                <span class="detail-info__picture-info__description__overview__public-info" *ngIf="!pictureInfo.is_public_domain">Private</span>
+                <span class="detail-info__picture-info__description__overview__public-info black" *ngIf="pictureInfo.is_public_domain">Public</span>
+                <span class="detail-info__picture-info__description__overview__public-info black" *ngIf="!pictureInfo.is_public_domain">Private</span>
             </div>
         </div>
     </div>

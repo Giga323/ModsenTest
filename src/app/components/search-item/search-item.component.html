@@ -1,4 +1,4 @@
 <div class="search-item" routerLink='/home/detail-info' [queryParams]="{ pictureId: itemInfo.id }">
-    <img class="search-item__image" [src]="imageSrc" alt="picture">
+    <img class="search-item__image" [src]="imageSrc" alt="picture" (error)="onImageSrcError()">
     <span class="search-item__title"> {{ itemInfo.title }} </span>
 </div>
