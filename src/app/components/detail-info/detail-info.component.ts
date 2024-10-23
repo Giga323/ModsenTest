@@ -35,7 +35,6 @@ export class DetailInfoComponent implements OnInit{
     })
     this.apiService.getPictureInfo(this.pictureId).subscribe((response) => {
       this.pictureInfo = response.data
-      console.log(this.pictureInfo)
       this.imageSrc = this.imageService.getImageSrc(this.pictureInfo.image_id, {width: 400, height: 500})
     })
   }
