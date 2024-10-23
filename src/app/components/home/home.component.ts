@@ -8,6 +8,7 @@ import { HomeService } from '@app/services/home/home.service';
 import { OtherWorksComponent } from '@app/components/other-works/other-works.component';
 import { PicturePageComponent } from '@app/components/picture-page/picture-page.component';
 import { SearchComponent } from '@app/components/search/search.component';
+import { SessionStorageService } from '@app/services/session-storage/session-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -30,12 +31,13 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   constructor(
     private homeService: HomeService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private sessionStorageService: SessionStorageService
   ) { }
 
   ngOnInit(): void {
     this.homeService.changeIsHomeComponent(true)
-    this.getPage(1)
+    this.getPage(+this.sessionStorageService.getTempPage()!)
   }
 
   ngOnDestroy(): void {

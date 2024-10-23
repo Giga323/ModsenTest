@@ -85,5 +85,9 @@
                 text-decoration: none;
             }
         }
+
+        &__home:hover, &__favorites:hover {
+            color: rgb(204, 203, 203);
+        }
     }
 }
