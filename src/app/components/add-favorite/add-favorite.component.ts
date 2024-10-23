@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalStorageService } from '@app/services/local-storage/local-storage.service';
+import { PictureInfo } from '@app/interfaces/pictureInfo';
 
 @Component({
   selector: 'app-add-favorite',
@@ -10,7 +11,7 @@ import { LocalStorageService } from '@app/services/local-storage/local-storage.s
   styleUrl: './add-favorite.component.scss'
 })
 export class AddFavoriteComponent {
-  @Input() pictureInfo!: any 
+  @Input() pictureInfo!: PictureInfo 
 
   constructor(
     private localStorageService: LocalStorageService 
