@@ -13,16 +13,28 @@
     }
 
     &__options {
+        z-index: 3;
 
         display: flex;
         flex-direction: column;
         position: absolute;
         margin-top: 3em;
-        background-color: white;
+        background-color: #f0f0f0;
 
         &__option {
+            width: 100px;
+            text-align: center;
             border: 1px rgb(173, 173, 173) solid;
             font-size: 1rem;
         }
+
+        &__option:active {
+            background-color: #b9b8b8;
+        }
+    }
+
+    &__button:active {
+        background-color: #b9b8b8;
     }
 }
+
