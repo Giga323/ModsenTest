@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ImageService } from '../../services/image/image.service';
 import { RouterLink } from '@angular/router';
+import { ImageService } from '@app/services/image/image.service';
 
 @Component({
   selector: 'app-search-item',

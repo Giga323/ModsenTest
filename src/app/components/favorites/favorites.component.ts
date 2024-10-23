@@ -1,7 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { LocalStorageService } from '../../services/local-storage/local-storage.service';
-import { CommonModule, JsonPipe } from '@angular/common';
-import { PictureComponent } from '../picture/picture.component';
+import { LocalStorageService } from '@app/services/local-storage/local-storage.service';
+import { PictureComponent } from '@app/components/picture/picture.component';
 
 @Component({
   selector: 'app-favorites',

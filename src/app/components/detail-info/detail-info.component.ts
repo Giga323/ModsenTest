@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PictureComponent } from '../picture/picture.component';
-import { AddFavoriteComponent } from '../add-favorite/add-favorite.component';
-import { ApiService } from '../../services/api/api.service';
-import { ImageService } from '../../services/image/image.service';
+import { ApiService } from '@app/services/api/api.service';
+import { ImageService } from '@app/services/image/image.service';
+import { PictureComponent } from '@app/components/picture/picture.component';
+import { AddFavoriteComponent } from '@app/components/add-favorite/add-favorite.component';
 
 @Component({
   selector: 'app-detail-info',

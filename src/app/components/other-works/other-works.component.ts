@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
 import { CommonModule } from '@angular/common';
-import { PictureComponent } from '../picture/picture.component';
+import { ApiService } from '@app/services/api/api.service';
+import { PictureComponent } from '@app/components/picture/picture.component';
 
 @Component({
   selector: 'app-other-works',

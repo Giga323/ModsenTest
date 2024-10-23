@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AddFavoriteComponent } from '../add-favorite/add-favorite.component';
 import { RouterLink } from '@angular/router';
-import { ImageService } from '../../services/image/image.service';
 import { CommonModule } from '@angular/common';
+import { ImageService } from '@app/services/image/image.service';
+import { AddFavoriteComponent } from '@app/components/add-favorite/add-favorite.component';
 
 @Component({
   selector: 'app-picture',

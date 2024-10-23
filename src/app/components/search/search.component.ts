@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
 import { CommonModule } from '@angular/common';
-import { SearchItemComponent } from '../search-item/search-item.component';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilterMenuComponent } from '../filter-menu/filter-menu.component';
-import { FilterService } from '../../services/filter/filter.service';
+import { ApiService } from '@app/services/api/api.service';
+import { FilterService } from '@app/services/filter/filter.service';
+import { FilterMenuComponent } from '@app/components/filter-menu/filter-menu.component';
+import { SearchItemComponent } from '@app/components/search-item/search-item.component';
 
 @Component({
   selector: 'app-search',

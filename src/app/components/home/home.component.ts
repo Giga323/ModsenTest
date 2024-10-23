@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PictureComponent } from '../picture/picture.component';
-import { PagesSwitcherComponent } from '../pages-switcher/pages-switcher.component';
-import { OtherWorksComponent } from '../other-works/other-works.component';
-import { HomeService } from '../../services/home/home.service';
-import { ApiService } from '../../services/api/api.service';
+import { PictureComponent } from '@app/components/picture/picture.component';
+import { PagesSwitcherComponent } from '@app/components/pages-switcher/pages-switcher.component';
 import { RouterLink } from '@angular/router';
-import { SearchComponent } from '../search/search.component';
-import { PicturePageComponent } from '../picture-page/picture-page.component';
+import { ApiService } from '@app/services/api/api.service';
+import { HomeService } from '@app/services/home/home.service';
+import { OtherWorksComponent } from '@app/components/other-works/other-works.component';
+import { PicturePageComponent } from '@app/components/picture-page/picture-page.component';
+import { SearchComponent } from '@app/components/search/search.component';
 
 @Component({
   selector: 'app-home',
