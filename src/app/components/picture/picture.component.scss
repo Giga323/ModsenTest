@@ -7,11 +7,15 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    position: relative;
+
+    transition: transform 0.2s ease;
     
     &__image {
+        border: 1px solid #e2ac5a;
         margin-left: 1em;
-        height: 70px;
-        width: 70px;
+        height: 60px;
+        width: 60px;
     }
 
     &__description {
@@ -33,4 +37,8 @@
         margin-left: auto;
         margin-right: 1em;
     }
+}
+
+.picture:hover {
+    transform: scale(1.05);
 }
