@@ -1,5 +1,14 @@
 .home {
     margin: 0 15em;
+
+    @media (min-width: 769px) and (max-width: 1280px) {
+        margin: 0 7em;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0;    
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +19,10 @@
         max-width: 10em;
         margin-top: 1.5em;
         font-size: 4rem;
+        
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
 
         &__art {
             color: #f17900;
@@ -37,6 +50,14 @@
             justify-content: center;
             gap: 4em;
 
+            @media (min-width: 769px) and (max-width: 1280px) {
+                gap: 1em;
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;  
+            }
+
             &__loading {
                 display: flex;
                 align-items: center;
@@ -63,6 +84,10 @@
 
         .pages-switcher {
             margin-left: auto;
+
+            @media (max-width: 768px) {
+                margin: 0 auto;
+            }
         }
     }
 
