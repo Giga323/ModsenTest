@@ -4,5 +4,4 @@ export interface PictureInfoResponse {
   config: object;
   data: PictureInfo;
   info: object;
-  pagination: object;
 }

@@ -11,54 +11,54 @@ describe('Filter Service', () => {
         expect(filterService.filterByAlphabet(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'a image 1',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 1,
                     title: 'c image 2',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 2,
                     title: 'b image 3',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
         )).toEqual(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'a image 1',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 2,
                     title: 'b image 3',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 1,
                     title: 'c image 2',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
                     timestamp: "2023-10-23T00:00:00Z"
                 }
             ]
@@ -66,19 +66,19 @@ describe('Filter Service', () => {
         expect(filterService.filterByAlphabet(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 1,
                     title: 'Image',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -86,7 +86,7 @@ describe('Filter Service', () => {
                     title: 'Secure',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -94,7 +94,7 @@ describe('Filter Service', () => {
                     title: 'Citro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -102,7 +102,7 @@ describe('Filter Service', () => {
                     title: 'Alexandro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -113,15 +113,15 @@ describe('Filter Service', () => {
                     title: 'Alexandro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -129,7 +129,7 @@ describe('Filter Service', () => {
                     title: 'Citro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -137,7 +137,7 @@ describe('Filter Service', () => {
                     title: 'Image',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -145,7 +145,7 @@ describe('Filter Service', () => {
                     title: 'Secure',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -153,11 +153,11 @@ describe('Filter Service', () => {
         expect(filterService.filterByAlphabet(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -165,7 +165,7 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -173,7 +173,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -181,7 +181,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -189,7 +189,7 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -200,7 +200,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -208,15 +208,15 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -224,7 +224,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -232,7 +232,7 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -243,11 +243,11 @@ describe('Filter Service', () => {
         expect(filterService.filterByDate(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'a image 1',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -255,7 +255,7 @@ describe('Filter Service', () => {
                     title: 'b image 3',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -263,18 +263,18 @@ describe('Filter Service', () => {
                     title: 'c image 2',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 }
             ]
         )).toEqual(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'a image 1',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -282,7 +282,7 @@ describe('Filter Service', () => {
                     title: 'c image 2',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -290,7 +290,7 @@ describe('Filter Service', () => {
                     title: 'b image 3',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -298,11 +298,11 @@ describe('Filter Service', () => {
         expect(filterService.filterByAlphabet(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -310,7 +310,7 @@ describe('Filter Service', () => {
                     title: 'Image',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -318,7 +318,7 @@ describe('Filter Service', () => {
                     title: 'Secure',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -326,7 +326,7 @@ describe('Filter Service', () => {
                     title: 'Citro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -334,7 +334,7 @@ describe('Filter Service', () => {
                     title: 'Alexandro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -345,15 +345,15 @@ describe('Filter Service', () => {
                     title: 'Alexandro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -361,7 +361,7 @@ describe('Filter Service', () => {
                     title: 'Citro',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -369,7 +369,7 @@ describe('Filter Service', () => {
                     title: 'Image',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -377,7 +377,7 @@ describe('Filter Service', () => {
                     title: 'Secure',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 }
             ]
@@ -385,11 +385,11 @@ describe('Filter Service', () => {
         expect(filterService.filterByDate(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -397,7 +397,7 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -405,7 +405,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-11-27T00:00:00Z"
                 },
                 {
@@ -413,7 +413,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -421,7 +421,7 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-01T00:00:00Z"
                 }
             ]
@@ -432,15 +432,15 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-01T00:00:00Z"
                 },
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-10-22T00:00:00Z"
                 },
                 {
@@ -448,7 +448,7 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-23T00:00:00Z"
                 },
                 {
@@ -456,7 +456,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -464,7 +464,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-11-27T00:00:00Z"
                 }
             ]
@@ -472,11 +472,11 @@ describe('Filter Service', () => {
         expect(filterService.filterByDate(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-01-22T00:00:00Z"
                 },
                 {
@@ -484,7 +484,7 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-12-23T00:00:00Z"
                 },
                 {
@@ -492,7 +492,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-09-27T00:00:00Z"
                 },
                 {
@@ -500,7 +500,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -508,18 +508,18 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-01T00:00:00Z"
                 }
             ]
         )).toEqual(
             [
                 {
+                    _score: 0,
                     id: 0,
                     title: 'Artist',
                     artist_title: 'artist 1',
                     image_id: 'image id 1',
-                    is_public_domain: true,
                     timestamp: "2023-01-22T00:00:00Z"
                 },
                 {
@@ -527,7 +527,7 @@ describe('Filter Service', () => {
                     title: 'Ace',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-09-27T00:00:00Z"
                 },
                 {
@@ -535,7 +535,7 @@ describe('Filter Service', () => {
                     title: 'Picture',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-01T00:00:00Z"
                 },
                 {
@@ -543,7 +543,7 @@ describe('Filter Service', () => {
                     title: 'Cymbals',
                     artist_title: 'artist 3',
                     image_id: 'image id 3',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-10-27T00:00:00Z"
                 },
                 {
@@ -551,7 +551,7 @@ describe('Filter Service', () => {
                     title: 'Afro',
                     artist_title: 'artist 2',
                     image_id: 'image id 2',
-                    is_public_domain: false,
+                    _score: 0,
                     timestamp: "2023-12-23T00:00:00Z"
                 }
             ]

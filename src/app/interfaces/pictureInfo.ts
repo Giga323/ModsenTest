@@ -14,6 +14,6 @@ export interface PictureInfo {
     alt_text: string;
     height: number;
     width: number;
-    lquip: string;
+    lqip: string;
   };
 }
