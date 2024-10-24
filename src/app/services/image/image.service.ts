@@ -6,7 +6,7 @@ import { Size } from '@app/interfaces/size';
 })
 export class ImageService {
   readonly linkPictures: string = 'https://www.artic.edu/iiif/2';
-  readonly defaultImageSrc: string = '../../../assets/museum.png';
+  readonly defaultImageSrc: string = './browser/assets/museum.png';
 
   constructor() {}
 

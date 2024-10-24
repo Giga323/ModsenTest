@@ -1,18 +1,18 @@
 <div class="burger">
   <button class="burger__button" (click)="toggleMenu()">
-    <img class="burger__button__image" src="../../../assets/menu.png" alt="menu" />
+    <img class="burger__button__image" src="./browser/assets/menu.png" alt="menu" />
   </button>
 
   <div class="burger__content" *ngIf="isMenuActive">
     <div class="burger__content__home" routerLink="/home" *ngIf="isHomeComponent">
-      <img class="burger__content__home__image" src="../../../assets/home.png" alt="home" />
+      <img class="burger__content__home__image" src="./browser/assets/home.png" alt="home" />
       <span class="burger__content__home__name">Home</span>
     </div>
 
     <div class="burger__content__favorites" routerLink="/home/favorites">
       <img
         class="burger__content__favorites__image"
-        src="../../../assets/bookmark-header.png"
+        src="./browser/assets/bookmark-header.png"
         alt="favorites" />
       <span class="burger__content__favorites__name">Favorites</span>
     </div>
