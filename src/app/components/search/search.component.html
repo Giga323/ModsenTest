@@ -1,23 +1,22 @@
 <div class="search">
-    <div class="search__string">
-        <input
-        class="search__string__input"
-        type="text"
-        [(ngModel)]="inputValue" 
-        (input)="onSearch()"
-        placeholder="Search Art, Artist, Work...">
+  <div class="search__string">
+    <input
+      class="search__string__input"
+      type="text"
+      [(ngModel)]="inputValue"
+      (input)="onSearch()"
+      placeholder="Search Art, Artist, Work..." />
 
-        <app-filter-menu class="filter" (optionEvent)="getFilterOption($event)"></app-filter-menu>
-        
-    </div>
+    <app-filter-menu class="filter" (optionEvent)="getFilterOption($event)"></app-filter-menu>
+  </div>
 
-    <div class="search__error" *ngIf="searchError"> {{ searchError }} </div>
+  <div class="search__error" *ngIf="searchError">{{ searchError }}</div>
 
-    <div class="search__result" *ngIf="inputResult && inputValue.length > 2">
-        <ng-container *ngFor="let item of inputResult">
-            <div class="search__result__item">
-                <app-search-item [itemInfo]="item"></app-search-item>
-            </div>
-        </ng-container>
-    </div>
+  <div class="search__result" *ngIf="inputResult && inputValue.length > 2">
+    <ng-container *ngFor="let item of inputResult">
+      <div class="search__result__item">
+        <app-search-item [itemInfo]="item"></app-search-item>
+      </div>
+    </ng-container>
+  </div>
 </div>

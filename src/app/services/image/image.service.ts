@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Size } from '@app/interfaces/size';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImageService {
-
   readonly linkPictures: string = 'https://www.artic.edu/iiif/2';
-  readonly defaultImageSrc: string = '../../../assets/museum.png'
+  readonly defaultImageSrc: string = '../../../assets/museum.png';
 
-  constructor() { }
+  constructor() {}
 
-  getImageSrc(imageId: number, size: any): string {
-    return `${this.linkPictures}/${imageId}/full/${size.width},${size.height}/0/default.jpg`
+  getImageSrc(imageId: string, size: Size): string {
+    return `${this.linkPictures}/${imageId}/full/${size.width},${size.height}/0/default.jpg`;
   }
 
   onImageSrcError() {
-    return this.defaultImageSrc
+    return this.defaultImageSrc;
   }
 }

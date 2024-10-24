@@ -1,13 +1,15 @@
 <div class="pages-switcher">
-    <button class="pages-switcher__left" *ngIf="pagesNumber[0] > 1" (click)="switchPagesLeft()"></button>
-    <ng-container *ngFor="let pageNumber of pagesNumber">
-        <button 
-        [ngClass]="{'active': tempPage === pageNumber}"
-        class="pages-switcher__page-number" 
-        (click)="switchPage(pageNumber)"
-        > 
-        {{ pageNumber }}
-        </button>
-    </ng-container>
-    <button class="pages-switcher__right" (click)="switchPagesRight()"></button>
+  <button
+    class="pages-switcher__left"
+    *ngIf="pagesNumber[0] > 1"
+    (click)="switchPagesLeft()"> </button>
+  <ng-container *ngFor="let pageNumber of pagesNumber">
+    <button
+      [ngClass]="{ active: tempPage === pageNumber }"
+      class="pages-switcher__page-number"
+      (click)="switchPage(pageNumber)">
+      {{ pageNumber }}
+    </button>
+  </ng-container>
+  <button class="pages-switcher__right" (click)="switchPagesRight()"> </button>
 </div>

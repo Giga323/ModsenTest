@@ -1,44 +1,44 @@
 .picture {
-    cursor: pointer;
-    width: 300px;
-    height: 100px;
-    background-color: white;
+  cursor: pointer;
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+
+  transition: transform 0.2s ease;
+
+  &__image {
+    border: 1px solid #e2ac5a;
+    margin-left: 1em;
+    height: 60px;
+    width: 60px;
+  }
+
+  &__description {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    position: relative;
+    flex-direction: column;
+    font-size: 1rem;
 
-    transition: transform 0.2s ease;
-    
-    &__image {
-        border: 1px solid #e2ac5a;
-        margin-left: 1em;
-        height: 60px;
-        width: 60px;
+    &__author-title {
+      color: #e2ac5a;
+      font-size: 0.75rem;
     }
 
-    &__description {
-        display: flex;
-        flex-direction: column;
-        font-size: 1rem;
-
-        &__author-title {
-            color: #e2ac5a;
-            font-size: 0.75rem;
-        }
-
-        &__public {
-            font-weight: bold;
-        }
+    &__public {
+      font-weight: bold;
     }
+  }
 
-    .favorite {
-        margin-left: auto;
-        margin-right: 1em;
-    }
+  .favorite {
+    margin-left: auto;
+    margin-right: 1em;
+  }
 }
 
 .picture:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }

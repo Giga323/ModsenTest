@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HomeService {
-  isHomeComponent$ = new Subject<boolean>()
+  isHomeComponent$ = new Subject<boolean>();
 
-  constructor() { }
+  constructor() {}
 
   changeIsHomeComponent(isHomeComponent: boolean) {
-    this.isHomeComponent$.next(!isHomeComponent)
+    this.isHomeComponent$.next(!isHomeComponent);
   }
 }

@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
+import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FilterService {
+  constructor() {}
 
-  constructor() { }
-
-  filterByAlphabet(pictures: any) {
-    console.log(pictures)
-    return pictures.sort((a: any, b: any) => {
+  filterByAlphabet(pictures: SearchInfoItem[]) {
+    return pictures.sort((a: SearchInfoItem, b: SearchInfoItem) => {
       if (a.title < b.title) {
         return -1;
       }
@@ -17,10 +16,12 @@ export class FilterService {
         return 1;
       }
       return 0;
-    })
+    });
   }
-  
-  filterByDate(pictures: any) {
-    return pictures.sort((a: any, b: any) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())
+
+  filterByDate(pictures: SearchInfoItem[]) {
+    return pictures.sort(
+      (a: SearchInfoItem, b: SearchInfoItem) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    );
   }
 }

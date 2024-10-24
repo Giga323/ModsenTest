@@ -1,73 +1,72 @@
 .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 140px;
+  position: relative;
+  z-index: 999;
+
+  &__button {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    &__image {
+      max-width: 48px;
+      max-height: 48px;
+    }
+  }
+
+  &__content {
+    color: white;
+    background-color: #323232;
+    width: 140px;
+    height: 100vh;
+    margin-top: 8px;
+    position: absolute;
+    top: 100%;
+    left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 140px;
-    position: relative;
-    z-index: 999;
 
-    &__button {
-        cursor: pointer;
-        border: none;
-        background-color: rgba(0, 0, 0, 0);   
-        color: white;  
-        
-        &__image {
-            max-width: 48px;
-            max-height: 48px;
-        }
+    &__home {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid white;
+      padding-left: 3px;
+
+      &__image {
+        max-width: 20px;
+        max-height: 30px;
+      }
+
+      &__name {
+        padding-left: 5px;
+      }
+
+      &__name:hover {
+        color: rgb(158, 158, 158);
+      }
     }
 
-    &__content {
-        color: white;
-        background-color: #323232;
-        width: 140px;
-        height: 100vh;
-        margin-top: 8px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: flex;
-        flex-direction: column;
+    &__favorites {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid white;
 
-        &__home {
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border-bottom: 1px solid white;
-            padding-left: 3px;
+      &__image {
+        max-width: 25px;
+        max-height: 30px;
+      }
 
-            &__image {
-                max-width: 20px;
-                max-height: 30px;
-            }
-
-            &__name {
-                padding-left: 5px;
-            }
-
-            &__name:hover {
-                color: rgb(158, 158, 158);
-            }
-        }
-
-        &__favorites {
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border-bottom: 1px solid white;
-
-            &__image {
-                max-width: 25px;
-                max-height: 30px;
-            }
-
-            &__name:hover {
-                color: rgb(158, 158, 158);
-            }
-        }
+      &__name:hover {
+        color: rgb(158, 158, 158);
+      }
     }
+  }
 }
-

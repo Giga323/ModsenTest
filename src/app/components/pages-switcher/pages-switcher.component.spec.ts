@@ -8,10 +8,9 @@ describe('PagesSwitcherComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PagesSwitcherComponent]
-    })
-    .compileComponents();
-    
+      imports: [PagesSwitcherComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PagesSwitcherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

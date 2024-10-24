@@ -1,16 +1,19 @@
 <main class="favorites">
-    <span class="favorites__header-first">Here Are Your</span>
-    <div class="favorites__header-favorites">
-        <img class="favorites__header-favorites__image" src="../../../assets/favorite.png" alt="favorites">
-        <span class="favorites__header-favorites__name">Favorites</span>
-    </div>
+  <span class="favorites__header-first">Here Are Your</span>
+  <div class="favorites__header-favorites">
+    <img
+      class="favorites__header-favorites__image"
+      src="../../../assets/favorite.png"
+      alt="favorites" />
+    <span class="favorites__header-favorites__name">Favorites</span>
+  </div>
 
-    <span class="favorites__saved">Saved by you</span>
-    <span class="favorites__list">Your favorites list</span>
+  <span class="favorites__saved">Saved by you</span>
+  <span class="favorites__list">Your favorites list</span>
 
-    <div class="favorites__pictures" *ngIf="favoritePictures">
-        <ng-container *ngFor="let picture of favoritePictures">
-            <app-picture [picture]="picture"></app-picture>
-        </ng-container>
-    </div>
+  <div class="favorites__pictures" *ngIf="favoritePictures">
+    <ng-container *ngFor="let picture of favoritePictures">
+      <app-picture [picture]="picture"></app-picture>
+    </ng-container>
+  </div>
 </main>

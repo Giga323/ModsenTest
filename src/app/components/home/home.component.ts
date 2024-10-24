@@ -9,6 +9,7 @@ import { OtherWorksComponent } from '@app/components/other-works/other-works.com
 import { PicturePageComponent } from '@app/components/picture-page/picture-page.component';
 import { SearchComponent } from '@app/components/search/search.component';
 import { SessionStorageService } from '@app/services/session-storage/session-storage.service';
+import { PictureInfo } from '@app/interfaces/pictureInfo';
 
 @Component({
   selector: 'app-home',
@@ -20,40 +21,40 @@ import { SessionStorageService } from '@app/services/session-storage/session-sto
     OtherWorksComponent,
     RouterLink,
     SearchComponent,
-    PicturePageComponent
+    PicturePageComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy{
-  currentPagePictures: any = []
-  isGalleryLoading: boolean = true
+export class HomeComponent implements OnInit, OnDestroy {
+  currentPagePictures: PictureInfo[] = [];
+  isGalleryLoading: boolean = true;
 
   constructor(
     private homeService: HomeService,
     private apiService: ApiService,
     private sessionStorageService: SessionStorageService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.homeService.changeIsHomeComponent(true)
-    this.getPage(+this.sessionStorageService.getTempPage()!)
+    this.homeService.changeIsHomeComponent(true);
+    this.getPage(+this.sessionStorageService.getTempPage()!);
   }
 
   ngOnDestroy(): void {
-    this.homeService.changeIsHomeComponent(false)
+    this.homeService.changeIsHomeComponent(false);
   }
 
   getPage(pageNumber: number): void {
-    this.isGalleryLoading = true
-    this.currentPagePictures = []
-    this.apiService.getPage(pageNumber).subscribe((response) => {
-      this.isGalleryLoading = false
-      this.currentPagePictures = response.data
-      this.currentPagePictures = this.currentPagePictures.map((el: any) => {
-        el['title'] = (el['title'].length > 20) ? el['title'].slice(0, 20) + '...' : el['title']
-        return el
-      })
-    })
+    this.isGalleryLoading = true;
+    this.currentPagePictures = [];
+    this.apiService.getPage(pageNumber).subscribe(response => {
+      this.isGalleryLoading = false;
+      this.currentPagePictures = response.data;
+      this.currentPagePictures = this.currentPagePictures.map((el: PictureInfo) => {
+        el['title'] = el['title'].length > 20 ? el['title'].slice(0, 20) + '...' : el['title'];
+        return el;
+      });
+    });
   }
 }

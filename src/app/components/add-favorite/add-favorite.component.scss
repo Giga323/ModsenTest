@@ -1,22 +1,23 @@
 .favorite {
-    background-color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &__image {
-        width: 15px;
-        height: 20px;
-    }
+  &__image {
+    width: 15px;
+    height: 20px;
+  }
 }
 
-.favorite:hover, .favorite:active {
-    background-color: rgb(252, 204, 156);
+.favorite:hover,
+.favorite:active {
+  background-color: rgb(252, 204, 156);
 }

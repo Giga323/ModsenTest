@@ -8,20 +8,18 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './add-favorite.component.html',
-  styleUrl: './add-favorite.component.scss'
+  styleUrl: './add-favorite.component.scss',
 })
 export class AddFavoriteComponent {
-  @Input() pictureInfo!: PictureInfo 
+  @Input() pictureInfo!: PictureInfo;
 
-  constructor(
-    private localStorageService: LocalStorageService 
-  ) { }
+  constructor(private localStorageService: LocalStorageService) {}
 
   toggleFavorite() {
     if (this.localStorageService.getItemFromLocalStorage(this.pictureInfo.id)) {
-      this.localStorageService.removeItemFromLocalStorage(this.pictureInfo.id)
+      this.localStorageService.removeItemFromLocalStorage(this.pictureInfo.id);
     } else {
-      this.localStorageService.addItemToLocalStorage(this.pictureInfo)
+      this.localStorageService.addItemToLocalStorage(this.pictureInfo);
     }
   }
 }

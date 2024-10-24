@@ -1,47 +1,49 @@
 .pages-switcher {
-    margin-top: 4em;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+
+  &__left {
+    cursor: pointer;
+    width: 15px;
+    height: 20px;
+    border: none;
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+    background-color: #f17900;
+  }
+
+  &__page-number {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
     align-items: center;
-    justify-content: center;
-    z-index: 0;
+    text-align: center;
+    border: none;
+    background-color: #fafafa;
+  }
 
-    &__left {
-        cursor: pointer;
-        width: 15px;
-        height: 20px;
-        border: none;
-        clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-        background-color: #f17900;
-    }
+  &__page-number.active,
+  &__page-number:hover {
+    color: white;
+    background-color: #f17900;
+    border-radius: 0.2em;
+  }
 
-    &__page-number {
-        cursor: pointer;
-        width: 2em;
-        height: 2em;
-        align-items: center;
-        text-align: center;
-        border: none;
-        background-color: #fafafa;
-    }
+  &__right {
+    cursor: pointer;
+    width: 15px;
+    height: 20px;
+    border: none;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    background-color: #f17900;
+  }
 
-    &__page-number.active, &__page-number:hover {
-        color: white;
-        background-color: #f17900;
-        border-radius: 0.2em;
-    }
-
-    &__right {
-        cursor: pointer;
-        width: 15px;
-        height: 20px;
-        border: none;
-        clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-        background-color: #f17900;
-    }
-
-    &__right:hover, &__left:hover {
-        background-color: #cf6800;
-    }
+  &__right:hover,
+  &__left:hover {
+    background-color: #cf6800;
+  }
 }

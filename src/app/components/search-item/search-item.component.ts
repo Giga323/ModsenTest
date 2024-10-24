@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 import { ImageService } from '@app/services/image/image.service';
 
 @Component({
@@ -7,26 +8,26 @@ import { ImageService } from '@app/services/image/image.service';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './search-item.component.html',
-  styleUrl: './search-item.component.scss'
+  styleUrl: './search-item.component.scss',
 })
 export class SearchItemComponent implements OnInit {
+  @Input() itemInfo!: SearchInfoItem;
+  imageSrc: string = '';
 
-  @Input() itemInfo!: any
-  imageSrc: string = ''
-
-  constructor(
-    private imageService: ImageService
-  ) { }
+  constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
-    this.getImageSrc()
+    this.getImageSrc();
   }
 
   getImageSrc() {
-    this.imageSrc = this.imageService.getImageSrc(this.itemInfo.image_id, {width: 40, height: 40})
+    this.imageSrc = this.imageService.getImageSrc(this.itemInfo.image_id, {
+      width: 40,
+      height: 40,
+    });
   }
 
   onImageSrcError() {
-    this.imageSrc = this.imageService.onImageSrcError()
+    this.imageSrc = this.imageService.onImageSrcError();
   }
 }
