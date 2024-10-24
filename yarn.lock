@@ -18,7 +18,7 @@
     "@angular-devkit/core" "17.3.10"
     rxjs "7.8.1"
 
-"@angular-devkit/build-angular@^17.0.6", "@angular-devkit/build-angular@>=15.0.0 <19.0.0":
+"@angular-devkit/build-angular@^17.0.6", "@angular-devkit/build-angular@>=15.0.0 <18.0.0":
   version "17.3.10"
   resolved "https://registry.npmjs.org/@angular-devkit/build-angular/-/build-angular-17.3.10.tgz"
   integrity sha512-syz7xgzmp8/0tPJWwQIKZt7KNJfp9U7hkqNacXz4XTYz6YM0oyBXlqk2claSxywWBEkc0eJVSMD9e2ArusZBuA==
@@ -120,7 +120,7 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@angular-eslint/builder@17.5.3":
+"@angular-eslint/builder@^17.5.3":
   version "17.5.3"
   resolved "https://registry.npmjs.org/@angular-eslint/builder/-/builder-17.5.3.tgz"
   integrity sha512-DoPCwt8qp5oMkfxY8V3wygf6/E7zzgXkPCwTRhIelklfpB3nYwLnbRSD8G5hueAU4eyASKiIuhR79E996AuUSw==
@@ -216,7 +216,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/compiler-cli@^17.0.0", "@angular/compiler-cli@>=15.0.0 <19.0.0":
+"@angular/compiler-cli@^17.0.0", "@angular/compiler-cli@>=15.0.0 <18.0.0":
   version "17.3.12"
   resolved "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-17.3.12.tgz"
   integrity sha512-1F8M7nWfChzurb7obbvuE7mJXlHtY1UG58pcwcomVtpPb+kPavgAO8OEvJHYBMV+bzSxkXt5UIwL9lt9jHUxZA==
@@ -237,7 +237,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^17.0.0", "@angular/core@>=15.0.0 <19.0.0", "@angular/core@17.3.12":
+"@angular/core@^17.0.0", "@angular/core@>=15.0.0 <18.0.0", "@angular/core@17.3.12":
   version "17.3.12"
   resolved "https://registry.npmjs.org/@angular/core/-/core-17.3.12.tgz"
   integrity sha512-MuFt5yKi161JmauUta4Dh0m8ofwoq6Ino+KoOtkYMBGsSx+A7dSm+DUxxNwdj7+DNyg3LjVGCFgBFnq4g8z06A==
@@ -251,7 +251,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@^17.0.0", "@angular/platform-browser-dynamic@>=15.0.0 <19.0.0":
+"@angular/platform-browser-dynamic@^17.0.0", "@angular/platform-browser-dynamic@>=15.0.0 <18.0.0":
   version "17.3.12"
   resolved "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-17.3.12.tgz"
   integrity sha512-DQwV7B2x/DRLRDSisngZRdLqHdYbbrqZv2Hmu4ZbnNYaWPC8qvzgE/0CvY+UkDat3nCcsfwsMnlDeB6TL7/IaA==
@@ -3640,7 +3640,7 @@ es-module-lexer@^1.2.1:
   resolved "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.5.4.tgz"
   integrity sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==
 
-esbuild-wasm@>=0.15.13, esbuild-wasm@0.20.1:
+esbuild-wasm@>=0.13.8, esbuild-wasm@0.20.1:
   version "0.20.1"
   resolved "https://registry.npmjs.org/esbuild-wasm/-/esbuild-wasm-0.20.1.tgz"
   integrity sha512-6v/WJubRsjxBbQdz6izgvx7LsVFvVaGmSdwrFHmEzoVgfXL89hkKPoQHsnVI2ngOkcBUQT9kmAM1hVL1k/Av4A==
@@ -3674,7 +3674,7 @@ esbuild@^0.19.3:
     "@esbuild/win32-ia32" "0.19.12"
     "@esbuild/win32-x64" "0.19.12"
 
-esbuild@>=0.15.13, esbuild@0.20.1:
+esbuild@>=0.13.8, esbuild@0.20.1:
   version "0.20.1"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.20.1.tgz"
   integrity sha512-OJwEgrpWm/PCMsLVWXKqvcjme3bHNpOgN7Tb6cQnR5n0TPbQx1/Xrn7rqM+wn17bYeT6MGB5sn1Bh5YiGi70nA==
@@ -5128,19 +5128,19 @@ jest-pnp-resolver@^1.2.2:
   resolved "https://registry.npmjs.org/jest-pnp-resolver/-/jest-pnp-resolver-1.2.3.tgz"
   integrity sha512-+3NpwQEnRoIBtx4fyhblQDPgJI0H1IEIkX7ShLUjPGA7TtUTvI1oiKi3SR4oBR0hQhQR80l4WAe5RrXBwWMA8w==
 
-jest-preset-angular@^14.2.4:
-  version "14.2.4"
-  resolved "https://registry.npmjs.org/jest-preset-angular/-/jest-preset-angular-14.2.4.tgz"
-  integrity sha512-xyhkaiBdn3keBgxxkcbqZu/my3ADU9NcDrz6DaMuGRaxz/bf6ZC1qxZ1eQuz5V1WuA3/rD64VA3Kke8P6E9qNg==
+jest-preset-angular@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.npmjs.org/jest-preset-angular/-/jest-preset-angular-14.0.0.tgz"
+  integrity sha512-gXGgzuGbpw3MRBMe/NGCu3r2E//GKmhtFveo0XUIXMvQ3je0vcOtK+WYjxtxFTTh2xFgrA/loY5BxBcKia/GaA==
   dependencies:
     bs-logger "^0.2.6"
-    esbuild-wasm ">=0.15.13"
+    esbuild-wasm ">=0.13.8"
     jest-environment-jsdom "^29.0.0"
     jest-util "^29.0.0"
     pretty-format "^29.0.0"
     ts-jest "^29.0.0"
   optionalDependencies:
-    esbuild ">=0.15.13"
+    esbuild ">=0.13.8"
 
 jest-regex-util@^29.6.3:
   version "29.6.3"
@@ -7848,10 +7848,10 @@ typed-assert@^1.0.8:
   resolved "https://registry.npmjs.org/typed-assert/-/typed-assert-1.0.9.tgz"
   integrity sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==
 
-typescript@*, typescript@^5.6.3, typescript@>=4.2.0, "typescript@>=4.3 <6", typescript@>=4.8, typescript@>=4.9.5, "typescript@>=5.2 <5.5":
-  version "5.6.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.6.3.tgz"
-  integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+typescript@*, typescript@^5.4.5, typescript@>=4.2.0, "typescript@>=4.3 <6", typescript@>=4.4, typescript@>=4.9.5, "typescript@>=5.2 <5.5":
+  version "5.4.5"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.4.5.tgz"
+  integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
 ua-parser-js@^0.7.30:
   version "0.7.39"
