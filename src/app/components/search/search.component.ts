@@ -28,7 +28,6 @@ export class SearchComponent {
 
   getFilterOption(event: string) {
     this.searchFilterOption = event;
-    console.log(this.searchFilterOption);
   }
 
   removeFilterOption() {

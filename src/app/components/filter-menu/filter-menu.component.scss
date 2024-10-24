@@ -5,6 +5,9 @@
   flex-direction: column;
 
   &__button {
+    cursor: pointer;
+    border: none;
+
     &__filter {
       width: 2em;
       height: 1.8em;
@@ -21,6 +24,7 @@
     background-color: #f0f0f0;
 
     &__option {
+      cursor: pointer;
       width: 150px;
       text-align: center;
       border: 1px rgb(173, 173, 173) solid;
