@@ -9,13 +9,7 @@ export class FilterService {
 
   filterByAlphabet(pictures: SearchInfoItem[]): SearchInfoItem[] {
     return pictures.sort((a: SearchInfoItem, b: SearchInfoItem) => {
-      if (a.title < b.title) {
-        return -1;
-      }
-      if (a.title > b.title) {
-        return 1;
-      }
-      return 0;
+      return a.title.localeCompare(b.title)
     });
   }
 
