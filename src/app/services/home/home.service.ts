@@ -9,7 +9,7 @@ export class HomeService {
 
   constructor() {}
 
-  changeIsHomeComponent(isHomeComponent: boolean) {
+  changeIsHomeComponent(isHomeComponent: boolean): void {
     this.isHomeComponent$.next(!isHomeComponent);
   }
 }

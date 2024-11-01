@@ -7,7 +7,7 @@ import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 export class FilterService {
   constructor() {}
 
-  filterByAlphabet(pictures: SearchInfoItem[]) {
+  filterByAlphabet(pictures: SearchInfoItem[]): SearchInfoItem[] {
     return pictures.sort((a: SearchInfoItem, b: SearchInfoItem) => {
       if (a.title < b.title) {
         return -1;
@@ -19,7 +19,7 @@ export class FilterService {
     });
   }
 
-  filterByDate(pictures: SearchInfoItem[]) {
+  filterByDate(pictures: SearchInfoItem[]): SearchInfoItem[] {
     return pictures.sort(
       (a: SearchInfoItem, b: SearchInfoItem) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
     );

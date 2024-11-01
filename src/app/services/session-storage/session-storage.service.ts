@@ -8,7 +8,7 @@ export class SessionStorageService {
 
   constructor() {}
 
-  getTempPage() {
+  getTempPage(): string | null {
     return sessionStorage[this.tempPageField] ? sessionStorage.getItem(this.tempPageField) : '1';
   }
 

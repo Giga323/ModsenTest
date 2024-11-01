@@ -18,7 +18,7 @@ export class BurgerMenuComponent {
     this.homeService.isHomeComponent$.subscribe(response => (this.isHomeComponent = response));
   }
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.isMenuActive = !this.isMenuActive;
   }
 }

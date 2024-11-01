@@ -26,11 +26,11 @@ export class SearchComponent {
     private filterService: FilterService
   ) {}
 
-  getFilterOption(event: string) {
+  getFilterOption(event: string): void {
     this.searchFilterOption = event;
   }
 
-  removeFilterOption() {
+  removeFilterOption(): void {
     this.searchFilterOption = '';
   }
 

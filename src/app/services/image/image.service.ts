@@ -14,7 +14,7 @@ export class ImageService {
     return `${this.linkPictures}/${imageId}/full/${size.width},${size.height}/0/default.jpg`;
   }
 
-  onImageSrcError() {
+  onImageSrcError(): string {
     return this.defaultImageSrc;
   }
 }

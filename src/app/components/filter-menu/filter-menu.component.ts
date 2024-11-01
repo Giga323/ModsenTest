@@ -14,11 +14,11 @@ export class FilterMenuComponent {
   isMenuOpen: boolean = false;
   options: string[] = ['by alphabet', 'by date'];
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  chooseOption(option: string) {
+  chooseOption(option: string): void {
     this.optionEvent.emit(option);
   }
 }

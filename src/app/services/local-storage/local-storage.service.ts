@@ -25,13 +25,13 @@ export class LocalStorageService {
     return null;
   }
 
-  addItemToLocalStorage(pictureInfo: PictureInfo) {
+  addItemToLocalStorage(pictureInfo: PictureInfo): void {
     const localStorageInfo: PictureInfo[] = this.getAllItemsFromLocalStorage();
     localStorageInfo.push(pictureInfo);
     localStorage[this.favoriteField] = JSON.stringify(localStorageInfo);
   }
 
-  removeItemFromLocalStorage(pictureId: string) {
+  removeItemFromLocalStorage(pictureId: string): void {
     const localStorageInfo: PictureInfo[] = this.getAllItemsFromLocalStorage();
     for (const infoRecord of localStorageInfo) {
       if (infoRecord.id === pictureId) {

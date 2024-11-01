@@ -25,7 +25,7 @@ export class PicturePageComponent implements OnInit {
     });
   }
 
-  onImageSrcError() {
+  onImageSrcError(): void {
     this.imageSrc = this.imageService.onImageSrcError();
   }
 }

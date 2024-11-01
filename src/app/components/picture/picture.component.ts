@@ -25,7 +25,7 @@ export class PictureComponent implements OnInit {
     }
   }
 
-  onImageSrcError() {
+  onImageSrcError(): void {
     this.imageSrc = this.imageService.onImageSrcError();
   }
 }

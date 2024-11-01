@@ -17,17 +17,17 @@ export class SearchItemComponent implements OnInit {
   constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
-    this.getImageSrc();
+    this.setImageSrc();
   }
 
-  getImageSrc() {
+  setImageSrc(): void {
     this.imageSrc = this.imageService.getImageSrc(this.itemInfo.image_id, {
       width: 40,
       height: 40,
     });
   }
 
-  onImageSrcError() {
+  onImageSrcError(): void {
     this.imageSrc = this.imageService.onImageSrcError();
   }
 }

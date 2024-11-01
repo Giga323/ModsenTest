@@ -16,7 +16,7 @@ export class OtherWorksComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.apiService.getOtherPictures().subscribe(response => {
       this.otherWorks = response.data;
     });
