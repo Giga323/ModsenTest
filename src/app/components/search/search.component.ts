@@ -1,56 +1,70 @@
-import { NgFor, NgIf } from '@angular/common';
-import { Component, signal, Signal } from '@angular/core';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '@app/services/api/api.service';
 import { FilterService } from '@app/services/filter/filter.service';
 import { FilterMenuComponent } from '@app/components/filter-menu/filter-menu.component';
 import { SearchItemComponent } from '@app/components/search-item/search-item.component';
 import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, map, Observable, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NgFor, NgIf, SearchItemComponent, FilterMenuComponent, FormsModule],
+  imports: [NgFor, NgIf, AsyncPipe , SearchItemComponent, FilterMenuComponent, FormsModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })
-export class SearchComponent {
-  inputResult: Signal<SearchInfoItem[] | undefined> = signal([]);
+export class SearchComponent implements OnInit {
+  inputResult!: Observable<SearchInfoItem[]>;
   inputValue: string = '';
   searchError: string = '';
   searchFilterOption: string = '';
-  private searchTimer: ReturnType<typeof setTimeout> | number = 0;
+  private searchResult$: Subject<string> = new Subject<string>();
+  private filterSubject$: BehaviorSubject<string> = new BehaviorSubject<string>('')
 
   constructor(
     private apiService: ApiService,
     private filterService: FilterService
   ) {}
 
-  getFilterOption(event: string): void {
+  ngOnInit(): void {
+    this.inputResult = this.searchResult$.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(searchResultItem => 
+        this.apiService.searchByPictureName(searchResultItem)  
+      ),
+      map(
+        response => {
+          return response.data as SearchInfoItem[]
+        }
+      ),
+      switchMap(items => 
+        this.filterSubject$.pipe(
+          map(filterOption => {
+            if (filterOption === 'by alphabet') {
+              return this.filterService.filterByAlphabet(items);
+            } else if (filterOption === 'by date') {
+              return this.filterService.filterByDate(items);
+            }
+            return items; 
+          })
+        )
+      )
+    )
+  }
+
+  getValue(event: Event): string {
+    return (event.target as HTMLInputElement).value;
+  }
+
+  filterBy(event: string): void {
     this.searchFilterOption = event;
+    this.filterSubject$.next(event); 
   }
 
-  removeFilterOption(): void {
-    this.searchFilterOption = '';
-  }
-
-  onSearch(): void {
-    clearTimeout(this.searchTimer);
-
-    this.searchTimer = setTimeout(() => {
-
-      this.apiService.searchByPictureName(this.inputValue).subscribe(response => {
-        if (response.data.length > 0 && response.data) {
-          this.searchError = '';
-          if (this.searchFilterOption === 'by alphabet') {
-            this.inputResult = signal(this.filterService.filterByAlphabet(response.data));
-          } else if (this.searchFilterOption === 'by date') {
-            this.inputResult = signal(this.filterService.filterByDate(response.data));
-          } else {
-            this.inputResult = signal(response.data);
-          }
-        } 
-      });
-    }, 500);
+  search(searchResult: string): void {
+    this.searchResult$.next(searchResult)
   }
 }

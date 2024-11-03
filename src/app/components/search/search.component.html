@@ -3,17 +3,16 @@
     <input
       class="search__string__input"
       type="text"
-      [(ngModel)]="inputValue"
-      (input)="onSearch()"
+      (keyup)="search(getValue($event))"
       placeholder="Search Art, Artist, Work..." />
 
-    <app-filter-menu class="filter" (optionEvent)="getFilterOption($event)"></app-filter-menu>
+    <app-filter-menu class="filter" (optionEvent)="filterBy($event)"></app-filter-menu>
   </div>
 
   <div class="search__error" *ngIf="searchError">{{ searchError }}</div>
 
-  <div class="search__result" *ngIf="inputResult() && inputValue.length > 2">
-    <ng-container *ngFor="let item of inputResult()">
+  <div class="search__result">
+    <ng-container *ngFor="let item of inputResult | async">
       <div class="search__result__item">
         <app-search-item [itemInfo]="item"></app-search-item>
       </div>
