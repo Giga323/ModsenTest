@@ -15,8 +15,9 @@ export class AddFavoriteComponent {
   constructor(private localStorageService: LocalStorageService) {}
 
   toggleFavorite(): void {
-    if (this.localStorageService.getItemFromLocalStorage(this.pictureInfo().id)) {
-      this.localStorageService.removeItemFromLocalStorage(this.pictureInfo().id);
+    const id = this.pictureInfo().id
+    if (this.localStorageService.getItemFromLocalStorage(id)) {
+      this.localStorageService.removeItemFromLocalStorage(id);
     } else {
       this.localStorageService.addItemToLocalStorage(this.pictureInfo());
     }

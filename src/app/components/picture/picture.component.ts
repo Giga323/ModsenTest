@@ -15,13 +15,14 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
 export class PictureComponent implements OnInit {
   picture: InputSignal<PictureInfo> = input.required<PictureInfo>();
   imageSrc: string = '';
+  readonly titleLength: number = 18;
 
   constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
     this.imageSrc = this.imageService.getImageSrc(this.picture().image_id, { width: 60, height: 60 });
-    if (this.picture().title.length > 18) {
-      this.picture().title = this.picture().title.slice(0, 18) + '...';
+    if (this.picture().title.length > this.titleLength) {
+      this.picture().title = this.picture().title.slice(0, this.titleLength) + '...';
     }
   }
 

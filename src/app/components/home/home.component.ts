@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentPagePictures: Signal<PictureInfo[] | undefined> = signal([]);
   isGalleryLoading: boolean = true;
   currentPage!: Subscription;
+  readonly titleLength: number = 20;
 
   constructor(
     private homeService: HomeService,
@@ -50,7 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.currentPage = this.apiService.getPage(pageNumber).subscribe(response => {
       this.isGalleryLoading = false;
       this.currentPagePictures = signal<PictureInfo[]>(response.data.map((el: PictureInfo) => {
-        el['title'] = el['title'].length > 20 ? el['title'].slice(0, 20) + '...' : el['title'];
+        el['title'] = el['title'].length > this.titleLength ? el['title'].slice(0, this.titleLength) + '...' : el['title'];
         return el;
       }));
     });
