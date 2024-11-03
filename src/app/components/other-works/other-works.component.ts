@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, Signal, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { ApiService } from '@app/services/api/api.service';
 import { PictureComponent } from '@app/components/picture/picture.component';
 import { PictureInfo } from '@app/interfaces/pictureInfo';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-other-works',
   standalone: true,
-  imports: [PictureComponent, CommonModule],
+  imports: [PictureComponent, NgFor],
   templateUrl: './other-works.component.html',
   styleUrl: './other-works.component.scss',
 })

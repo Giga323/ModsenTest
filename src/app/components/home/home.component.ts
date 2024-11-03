@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit, Signal, signal} from '@angular/core';
 import { PictureComponent } from '@app/components/picture/picture.component';
 import { PagesSwitcherComponent } from '@app/components/pages-switcher/pages-switcher.component';
@@ -16,7 +16,8 @@ import { Subscription } from 'rxjs';
   selector: 'app-home',
   standalone: true,
   imports: [
-    CommonModule,
+    NgFor,
+    NgIf,
     PictureComponent,
     PagesSwitcherComponent,
     OtherWorksComponent,

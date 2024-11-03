@@ -1,6 +1,6 @@
 import { Component, input, InputSignal, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ImageService } from '@app/services/image/image.service';
 import { AddFavoriteComponent } from '@app/components/add-favorite/add-favorite.component';
 import { PictureInfo } from '@app/interfaces/pictureInfo';
@@ -8,7 +8,7 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
 @Component({
   selector: 'app-picture-page',
   standalone: true,
-  imports: [AddFavoriteComponent, RouterLink, CommonModule],
+  imports: [AddFavoriteComponent, RouterLink, NgIf],
   templateUrl: './picture-page.component.html',
   styleUrl: './picture-page.component.scss',
 })

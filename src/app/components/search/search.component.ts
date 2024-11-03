@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, signal, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '@app/services/api/api.service';
@@ -10,7 +10,7 @@ import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, SearchItemComponent, FilterMenuComponent, FormsModule],
+  imports: [NgFor, NgIf, SearchItemComponent, FilterMenuComponent, FormsModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })

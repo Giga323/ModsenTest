@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '@app/services/local-storage/local-storage.service';
 import { PictureComponent } from '@app/components/picture/picture.component';
@@ -7,7 +7,7 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [CommonModule, PictureComponent],
+  imports: [NgFor, NgIf, PictureComponent],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.scss',
 })

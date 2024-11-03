@@ -1,12 +1,11 @@
 import { Component, input, InputSignal} from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LocalStorageService } from '@app/services/local-storage/local-storage.service';
 import { PictureInfo } from '@app/interfaces/pictureInfo';
 
 @Component({
   selector: 'app-add-favorite',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './add-favorite.component.html',
   styleUrl: './add-favorite.component.scss',
 })

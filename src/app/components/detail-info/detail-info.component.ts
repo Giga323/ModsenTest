@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '@app/services/api/api.service';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-detail-info',
   standalone: true,
-  imports: [CommonModule, PictureComponent, AddFavoriteComponent],
+  imports: [NgIf, PictureComponent, AddFavoriteComponent],
   templateUrl: './detail-info.component.html',
   styleUrl: './detail-info.component.scss',
 })

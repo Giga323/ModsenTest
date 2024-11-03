@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, output, OutputEmitterRef } from '@angular/core';
 import { SessionStorageService } from '@app/services/session-storage/session-storage.service';
 
 @Component({
   selector: 'app-pages-switcher',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgClass, NgFor, NgIf],
   templateUrl: './pages-switcher.component.html',
   styleUrl: './pages-switcher.component.scss',
 })

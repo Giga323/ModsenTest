@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, output, OutputEmitterRef } from '@angular/core';
 
 @Component({
   selector: 'app-filter-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor, NgIf],
   templateUrl: './filter-menu.component.html',
   styleUrl: './filter-menu.component.scss',
 })
