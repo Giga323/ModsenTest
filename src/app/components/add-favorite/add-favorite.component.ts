@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, InputSignal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalStorageService } from '@app/services/local-storage/local-storage.service';
 import { PictureInfo } from '@app/interfaces/pictureInfo';
@@ -11,15 +11,15 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
   styleUrl: './add-favorite.component.scss',
 })
 export class AddFavoriteComponent {
-  @Input() pictureInfo!: PictureInfo;
+  pictureInfo: InputSignal<PictureInfo> = input.required<PictureInfo>();
 
   constructor(private localStorageService: LocalStorageService) {}
 
   toggleFavorite(): void {
-    if (this.localStorageService.getItemFromLocalStorage(this.pictureInfo.id)) {
-      this.localStorageService.removeItemFromLocalStorage(this.pictureInfo.id);
+    if (this.localStorageService.getItemFromLocalStorage(this.pictureInfo().id)) {
+      this.localStorageService.removeItemFromLocalStorage(this.pictureInfo().id);
     } else {
-      this.localStorageService.addItemToLocalStorage(this.pictureInfo);
+      this.localStorageService.addItemToLocalStorage(this.pictureInfo());
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, InputSignal, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 import { ImageService } from '@app/services/image/image.service';
@@ -11,7 +11,7 @@ import { ImageService } from '@app/services/image/image.service';
   styleUrl: './search-item.component.scss',
 })
 export class SearchItemComponent implements OnInit {
-  @Input() itemInfo!: SearchInfoItem;
+  itemInfo: InputSignal<SearchInfoItem> = input.required<SearchInfoItem>();
   imageSrc: string = '';
 
   constructor(private imageService: ImageService) {}
@@ -21,7 +21,7 @@ export class SearchItemComponent implements OnInit {
   }
 
   setImageSrc(): void {
-    this.imageSrc = this.imageService.getImageSrc(this.itemInfo.image_id, {
+    this.imageSrc = this.imageService.getImageSrc(this.itemInfo().image_id, {
       width: 40,
       height: 40,
     });

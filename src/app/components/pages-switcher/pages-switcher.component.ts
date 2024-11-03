@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output, OutputEmitterRef } from '@angular/core';
 import { SessionStorageService } from '@app/services/session-storage/session-storage.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SessionStorageService } from '@app/services/session-storage/session-sto
   styleUrl: './pages-switcher.component.scss',
 })
 export class PagesSwitcherComponent {
-  @Output() pageNumberEvent: EventEmitter<number> = new EventEmitter<number>(true);
+  pageNumberEvent: OutputEmitterRef<number> = output<number>();
 
   tempPage: number;
   pagesNumber: number[] = [1, 2, 3, 4];

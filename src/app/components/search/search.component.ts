@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '@app/services/api/api.service';
 import { FilterService } from '@app/services/filter/filter.service';
@@ -15,7 +15,7 @@ import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
   styleUrl: './search.component.scss',
 })
 export class SearchComponent {
-  inputResult: SearchInfoItem[] = [];
+  inputResult: Signal<SearchInfoItem[] | undefined> = signal([]);
   inputValue: string = '';
   searchError: string = '';
   searchFilterOption: string = '';
@@ -39,31 +39,17 @@ export class SearchComponent {
 
     this.searchTimer = setTimeout(() => {
 
-      if (!this.inputValue) {
-        this.inputResult = [];
-        return;
-      }
-
-      if (this.inputValue.length < 2) {
-        this.searchError = 'Input value must be more than 2 characters length';
-        this.inputResult = [];
-        return;
-      }
-
       this.apiService.searchByPictureName(this.inputValue).subscribe(response => {
         if (response.data.length > 0 && response.data) {
           this.searchError = '';
           if (this.searchFilterOption === 'by alphabet') {
-            this.inputResult = this.filterService.filterByAlphabet(response.data);
+            this.inputResult = signal(this.filterService.filterByAlphabet(response.data));
           } else if (this.searchFilterOption === 'by date') {
-            this.inputResult = this.filterService.filterByDate(response.data);
+            this.inputResult = signal(this.filterService.filterByDate(response.data));
           } else {
-            this.inputResult = response.data;
+            this.inputResult = signal(response.data);
           }
-        } else {
-          this.inputResult = [];
-          this.searchError = 'No results';
-        }
+        } 
       });
     }, 500);
   }

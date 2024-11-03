@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Signal, signal} from '@angular/core';
 import { PictureComponent } from '@app/components/picture/picture.component';
 import { PagesSwitcherComponent } from '@app/components/pages-switcher/pages-switcher.component';
 import { RouterLink } from '@angular/router';
@@ -10,6 +10,7 @@ import { PicturePageComponent } from '@app/components/picture-page/picture-page.
 import { SearchComponent } from '@app/components/search/search.component';
 import { SessionStorageService } from '@app/services/session-storage/session-storage.service';
 import { PictureInfo } from '@app/interfaces/pictureInfo';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -27,8 +28,9 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  currentPagePictures: PictureInfo[] = [];
+  currentPagePictures: Signal<PictureInfo[] | undefined> = signal([]);
   isGalleryLoading: boolean = true;
+  currentPage!: Subscription;
 
   constructor(
     private homeService: HomeService,
@@ -41,20 +43,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getPage(+this.sessionStorageService.getTempPage()!);
   }
 
-  ngOnDestroy(): void {
-    this.homeService.changeIsHomeComponent(false);
-  }
-
   getPage(pageNumber: number): void {
     this.isGalleryLoading = true;
-    this.currentPagePictures = [];
-    this.apiService.getPage(pageNumber).subscribe(response => {
+    this.currentPagePictures = signal([])
+    this.currentPage = this.apiService.getPage(pageNumber).subscribe(response => {
       this.isGalleryLoading = false;
-      this.currentPagePictures = response.data;
-      this.currentPagePictures = this.currentPagePictures.map((el: PictureInfo) => {
+      this.currentPagePictures = signal<PictureInfo[]>(response.data.map((el: PictureInfo) => {
         el['title'] = el['title'].length > 20 ? el['title'].slice(0, 20) + '...' : el['title'];
         return el;
-      });
+      }));
     });
+  }
+
+  ngOnDestroy(): void {
+    this.homeService.changeIsHomeComponent(false);
+    this.currentPage?.unsubscribe()
   }
 }

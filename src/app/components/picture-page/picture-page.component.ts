@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, InputSignal, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ImageService } from '@app/services/image/image.service';
@@ -13,13 +13,13 @@ import { PictureInfo } from '@app/interfaces/pictureInfo';
   styleUrl: './picture-page.component.scss',
 })
 export class PicturePageComponent implements OnInit {
-  @Input() picture!: PictureInfo;
+  pictureInfo: InputSignal<PictureInfo> = input.required<PictureInfo>()
   imageSrc: string = '';
 
   constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
-    this.imageSrc = this.imageService.getImageSrc(this.picture.image_id, {
+    this.imageSrc = this.imageService.getImageSrc(this.pictureInfo().image_id, {
       width: 300,
       height: 400,
     });

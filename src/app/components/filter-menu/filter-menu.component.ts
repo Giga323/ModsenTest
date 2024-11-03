@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output, OutputEmitterRef } from '@angular/core';
 
 @Component({
   selector: 'app-filter-menu',
@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './filter-menu.component.scss',
 })
 export class FilterMenuComponent {
-  @Output() optionEvent: EventEmitter<string> = new EventEmitter<string>(true);
+  optionEvent: OutputEmitterRef<string> = output<string>();
 
   isMenuOpen: boolean = false;
   options: string[] = ['by alphabet', 'by date'];

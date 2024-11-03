@@ -16,8 +16,8 @@
         <div class="home__gallery__pictures__loading__loader"></div>
       </div>
 
-      <ng-container *ngFor="let picture of currentPagePictures">
-        <app-picture-page [picture]="picture"></app-picture-page>
+      <ng-container *ngFor="let picture of currentPagePictures()">
+        <app-picture-page [pictureInfo]="picture"></app-picture-page>
       </ng-container>
     </div>
 
