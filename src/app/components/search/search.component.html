@@ -4,14 +4,19 @@
       class="search__string__input"
       type="text"
       (keyup)="search(getValue($event))"
+      [formControl]="searchTextControl"
       placeholder="Search Art, Artist, Work..." />
 
     <app-filter-menu class="filter" (optionEvent)="filterBy($event)"></app-filter-menu>
   </div>
 
-  <div class="search__error" *ngIf="searchError">{{ searchError }}</div>
+  <div class="search__error" *ngIf="searchTextControl.invalid && (searchTextControl.dirty || searchTextControl.touched)">
+    <div class="search__error__min-length error" *ngIf="searchError">
+      {{ searchError }}
+    </div>
+  </div>
 
-  <div class="search__result">
+  <div class="search__result" *ngIf="!searchError">
     <ng-container *ngFor="let item of inputResult | async">
       <div class="search__result__item">
         <app-search-item [itemInfo]="item"></app-search-item>

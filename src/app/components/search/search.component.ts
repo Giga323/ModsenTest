@@ -1,34 +1,54 @@
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '@app/services/api/api.service';
 import { FilterService } from '@app/services/filter/filter.service';
 import { FilterMenuComponent } from '@app/components/filter-menu/filter-menu.component';
 import { SearchItemComponent } from '@app/components/search-item/search-item.component';
 import { SearchInfoItem } from '@app/interfaces/searchInfoItem';
 import { BehaviorSubject, debounceTime, distinctUntilChanged, map, Observable, Subject, switchMap } from 'rxjs';
+import { specialSymbolValidator } from '@app/directives/custom-validators/special-symbols-validator.directive';
+import { numberValidator } from '@app/directives/custom-validators/numbers-validator.directive';
+import { spaceValidator } from '@app/directives/custom-validators/space-validator.directive';
+import { ValidationService } from '@app/services/validation/validation.service';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NgFor, NgIf, AsyncPipe , SearchItemComponent, FilterMenuComponent, FormsModule],
+  imports: [
+    NgFor,
+    NgIf, 
+    AsyncPipe, 
+    SearchItemComponent, 
+    FilterMenuComponent, 
+    ReactiveFormsModule
+  ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })
 export class SearchComponent implements OnInit {
-  inputResult!: Observable<SearchInfoItem[]>;
+  inputResult!: Observable<SearchInfoItem[]> | null;
   inputValue: string = '';
   searchError: string = '';
   searchFilterOption: string = '';
+  searchTextControl!: FormControl<string | null>;
   private searchResult$: Subject<string> = new Subject<string>();
   private filterSubject$: BehaviorSubject<string> = new BehaviorSubject<string>('')
 
   constructor(
     private apiService: ApiService,
-    private filterService: FilterService
-  ) {}
+    private filterService: FilterService,
+    private validationService: ValidationService
+  ) { }
 
   ngOnInit(): void {
+    this.searchTextControl = new FormControl(this.inputValue, [
+      Validators.minLength(3),
+      specialSymbolValidator(/[!@#$%^&*()[]{}]/),
+      numberValidator(/[0-9]/),
+      spaceValidator(/ /)
+    ])
+
     this.inputResult = this.searchResult$.pipe(
       debounceTime(500),
       distinctUntilChanged(),
@@ -56,7 +76,8 @@ export class SearchComponent implements OnInit {
   }
 
   getValue(event: Event): string {
-    return (event.target as HTMLInputElement).value;
+    this.inputValue = (event.target as HTMLInputElement).value;
+    return this.inputValue
   }
 
   filterBy(event: string): void {
@@ -65,6 +86,10 @@ export class SearchComponent implements OnInit {
   }
 
   search(searchResult: string): void {
-    this.searchResult$.next(searchResult)
+    const validationResult = this.validationService.checkValidationError(this.searchTextControl)
+    this.searchError = validationResult.searchError
+    if (validationResult.result) {
+      this.searchResult$.next(searchResult)
+    } 
   }
 }
