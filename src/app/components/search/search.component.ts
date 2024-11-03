@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.searchTextControl = new FormControl(this.inputValue, [
       Validators.minLength(3),
-      specialSymbolValidator(/[!@#$%^&*()[]{}]/),
+      specialSymbolValidator(/[!@#$%^&*)([\]}{]/),
       numberValidator(/[0-9]/),
       spaceValidator(/ /)
     ])
